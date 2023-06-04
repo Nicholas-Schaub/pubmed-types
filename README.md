@@ -76,8 +76,6 @@ Title: Lactate as a myokine and exerkine: drivers and signals of physiology and 
 
 ### Example 2: A Pubmed baseline citation file
 
-### Example 1: A PMC Open Access Article
-
 ```python
 import gzip
 import urllib.request as request
