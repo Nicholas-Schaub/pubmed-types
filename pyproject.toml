@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pubmed-types"
+version = "0.1.0"
+description = "Pubmed XML parsing and typehints."
+authors = ["Nick Schaub <nick.schaub@nih.gov>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+xsdata-pydantic = {extras = ["cli", "lxml", "soap"], version = "^22.10"}
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+ruff = "^0.0.270"
+pre-commit = "^3.3.2"
+nox = "^2023.4.22"
+requests = "^2.31.0"
+pytest = "^5.2"
+bump2version = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,27 @@
+from enum import Enum
+
+
+class CommentsCorrectionsRefType(Enum):
+    ASSOCIATED_DATASET = "AssociatedDataset"
+    ASSOCIATED_PUBLICATION = "AssociatedPublication"
+    COMMENT_IN = "CommentIn"
+    COMMENT_ON = "CommentOn"
+    CORRECTEDAND_REPUBLISHED_IN = "CorrectedandRepublishedIn"
+    CORRECTEDAND_REPUBLISHED_FROM = "CorrectedandRepublishedFrom"
+    ERRATUM_IN = "ErratumIn"
+    ERRATUM_FOR = "ErratumFor"
+    EXPRESSION_OF_CONCERN_IN = "ExpressionOfConcernIn"
+    EXPRESSION_OF_CONCERN_FOR = "ExpressionOfConcernFor"
+    REPUBLISHED_IN = "RepublishedIn"
+    REPUBLISHED_FROM = "RepublishedFrom"
+    RETRACTEDAND_REPUBLISHED_IN = "RetractedandRepublishedIn"
+    RETRACTEDAND_REPUBLISHED_FROM = "RetractedandRepublishedFrom"
+    RETRACTION_IN = "RetractionIn"
+    RETRACTION_OF = "RetractionOf"
+    UPDATE_IN = "UpdateIn"
+    UPDATE_OF = "UpdateOf"
+    SUMMARY_FOR_PATIENTS_IN = "SummaryForPatientsIn"
+    ORIGINAL_REPORT_IN = "OriginalReportIn"
+    REPRINT_IN = "ReprintIn"
+    REPRINT_OF = "ReprintOf"
+    CITES = "Cites"
