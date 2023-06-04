@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pubmed-types"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Nick Schaub <nick.schaub@nih.gov>"]
 description = "Pubmed XML parsing and typehints."
 readme = "README.md"
