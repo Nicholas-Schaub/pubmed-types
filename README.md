@@ -1,4 +1,4 @@
-# pubmed-types (v0.1.0)
+# pubmed-types (v0.1.1)
 
 ## Introduction
 
