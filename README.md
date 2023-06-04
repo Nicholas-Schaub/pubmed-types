@@ -1,5 +1,12 @@
 # pubmed-types (v0.1.1)
 
+<p align="center">
+    <img src="https://img.shields.io/pypi/dm/pubmed-types?style=flat-square" />
+    <img src="https://img.shields.io/pypi/l/pubmed-types?style=flat-square"/>
+    <img src="https://img.shields.io/pypi/v/pubmed-types?style=flat-square"/>
+    <a href="https://github.com/tefra/xsdata-pydantic"><img alt="Built with: xsdata-pydantic" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+</p>
+
 ## Introduction
 
 A complete implementation of the XML schema for PMC Open Access articles and Pubmed
