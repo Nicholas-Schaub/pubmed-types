@@ -1,8 +1,30 @@
 [tool.poetry]
 name = "pubmed-types"
 version = "0.1.0"
-description = "Pubmed XML parsing and typehints."
 authors = ["Nick Schaub <nick.schaub@nih.gov>"]
+description = "Pubmed XML parsing and typehints."
+readme = "README.md"
+license = "MIT"
+packages = [{include = "pubmed_types", from = "src"}]
+homepage = "https://github.com/nicholas-schaub/pubmed-types"
+repository = "https://github.com/nicholas-schaub/pubmed-types"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3"
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Text Processing :: Markup :: XML",
+]
+
+[tool.poetry.urls]
+"Issues" = "https://github.com/nicholas-schaub/pubmed-types/issues"
 
 [tool.poetry.dependencies]
 python = "^3.9"
