@@ -1,10 +1,15 @@
-# pubmed-types (v0.1.2)
+# pubmed-types (v0.2.0)
 
 <p align="center">
     <img src="https://img.shields.io/pypi/dm/pubmed-types?style=flat-square" />
     <img src="https://img.shields.io/pypi/l/pubmed-types?style=flat-square"/>
     <img src="https://img.shields.io/pypi/v/pubmed-types?style=flat-square"/>
-    <a href="https://github.com/tefra/xsdata-pydantic"><img alt="Built with: xsdata-pydantic" src="https://img.shields.io/badge/Built%20with-xsdata--pydantic-blue"></a>
+    <a href="https://github.com/tefra/xsdata-pydantic">
+        <img alt="Built with: xsdata-pydantic" src="https://img.shields.io/badge/Built%20with-xsdata--pydantic-blue">
+    </a>
+    <a href="https://github.com/dbrgn/coverage-badge">
+        <img src="./images/coverage.svg">
+    </a>
 </p>
 
 ## Introduction
@@ -15,6 +20,15 @@ article sets (citations).
 This package helps to parse PubMed XML data into Pydantic models. This validates the
 input xml data and provides typehints for working with the complex XML structures
 present in PubMed data.
+
+## Most Recent Changes
+
+* **Breaking Change:** The `parse_pubmed_xml` is replaced by `pmc_article` and `pubmed_article_set`.
+* More test coverage
+* Pubmed Articles can now parse MathML
+* Restructured code to separate out `jats` (pmc open access articles) and `pubmed` (pubmed article set)
+* One unit test with 99% coverage
+* Added [CHANGELOG.md](CHANGELOG.md)
 
 ## Why do I need this?
 
@@ -44,7 +58,7 @@ import urllib.request as request
 from contextlib import closing
 from pathlib import Path
 
-from pubmed_types import parse_pubmed_xml
+from pubmed_types import pmc_article
 
 # Input file source and output file destination
 source = (
@@ -62,7 +76,7 @@ with closing(request.urlopen(source)) as url:
 
 # 2. Parse the file
 file_path = destination.joinpath("PMC009xxxxxx").joinpath("PMC9970662.xml")
-full_text = parse_pubmed_xml(file_path)
+full_text = pmc_article(file_path)
 
 # 3. Print out the article title
 print(f"Title: {full_text.front.article_meta.title_group.article_title.content[0]}")
@@ -82,7 +96,7 @@ import urllib.request as request
 from contextlib import closing
 from pathlib import Path
 
-from pubmed_types import parse_pubmed_xml, PubmedArticleSet
+from pubmed_types import pubmed_article_set
 
 # Input file source and output file destination
 source = "ftp://ftp.ncbi.nlm.nih.gov" + "/pubmed/updatefiles" + "/pubmed23n1168.xml.gz"
@@ -96,12 +110,13 @@ with closing(request.urlopen(source)) as url:
             fw.write(fr.read())
 
 # 2. Parse the file
-article_set = parse_pubmed_xml(destination)
-assert isinstance(article_set, PubmedArticleSet)
+article_set = pubmed_article_set(destination)
 
 # 3. Get the number of citations in the file
 print(f"Number of citations: {len(article_set.pubmed_article)}")
-print(f"{article_set.pubmed_article[0].medline_citation.article.article_title.content[0]}")
+print(
+    f"{article_set.pubmed_article[0].medline_citation.article.article_title.content[0]}"
+)
 ```
 
 Output:
