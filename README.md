@@ -1,4 +1,4 @@
-# pubmed-types (v0.1.2)
+# pubmed-types (v0.2.0-dev0)
 
 <p align="center">
     <img src="https://img.shields.io/pypi/dm/pubmed-types?style=flat-square" />
