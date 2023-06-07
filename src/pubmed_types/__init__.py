@@ -5,16 +5,21 @@ from typing import Union
 
 from xsdata_pydantic.bindings import XmlParser
 
-from .models.article_2 import Article2 as PMCArticle
-from .models.pubmed_article_set import PubmedArticleSet
+from .models.jats.article import Article as PMCArticle
+from .models.pubmed.pubmed_article_set import PubmedArticleSet
 
 
-def parse_pubmed_xml(xml: Union[Path, str]) -> Union[PMCArticle, PubmedArticleSet]:
+def pmc_article(xml: Union[Path, str]) -> PMCArticle:
     parser = XmlParser()
 
-    try:
-        result = parser.parse(xml, PMCArticle)
-    except:
-        result = parser.parse(xml, PubmedArticleSet)
+    result = parser.parse(xml, PMCArticle)
+
+    return result
+
+
+def pubmed_article_set(xml: Union[Path, str]) -> PubmedArticleSet:
+    parser = XmlParser()
+
+    result = parser.parse(xml, PubmedArticleSet)
 
     return result

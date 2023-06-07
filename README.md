@@ -4,7 +4,12 @@
     <img src="https://img.shields.io/pypi/dm/pubmed-types?style=flat-square" />
     <img src="https://img.shields.io/pypi/l/pubmed-types?style=flat-square"/>
     <img src="https://img.shields.io/pypi/v/pubmed-types?style=flat-square"/>
-    <a href="https://github.com/tefra/xsdata-pydantic"><img alt="Built with: xsdata-pydantic" src="https://img.shields.io/badge/Built%20with-xsdata--pydantic-blue"></a>
+    <a href="https://github.com/tefra/xsdata-pydantic">
+        <img alt="Built with: xsdata-pydantic" src="https://img.shields.io/badge/Built%20with-xsdata--pydantic-blue">
+    </a>
+    <a href="https://github.com/dbrgn/coverage-badge">
+        <img src="./images/coverage.svg">
+    </a>
 </p>
 
 ## Introduction
@@ -15,6 +20,15 @@ article sets (citations).
 This package helps to parse PubMed XML data into Pydantic models. This validates the
 input xml data and provides typehints for working with the complex XML structures
 present in PubMed data.
+
+## Most Recent Changes
+
+* **Breaking Change:** The `parse_pubmed_xml` is replaced by `pmc_article` and `pubmed_article_set`.
+* More test coverage
+* Pubmed Articles can now parse MathML
+* Restructured code to separate out `jats` (pmc open access articles) and `pubmed` (pubmed article set)
+* One unit test with 99% coverage
+* Added [CHANGELOG.md](CHANGELOG.md)
 
 ## Why do I need this?
 

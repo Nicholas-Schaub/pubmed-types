@@ -36,8 +36,11 @@ ruff = "^0.0.270"
 pre-commit = "^3.3.2"
 nox = "^2023.4.22"
 requests = "^2.31.0"
-pytest = "^5.2"
+pytest = "^7.3.1"
 bump2version = "^1.0.1"
+pytest-cov = "^4.1.0"
+pytest-xdist = "^3.3.1"
+coverage-badge = "^1.1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
